@@ -1,3 +1,4 @@
+package Patterns;
 public class Patterns {
     public void pattern1(int x){
         // *****
@@ -147,11 +148,20 @@ public class Patterns {
             System.out.println("*".repeat(stars));
         }
     }
+    public void pattern11(int n){
+        int isEven =  n % 2;
+        for (int i = 0; i < n; i++){
+            while (isEven != 0){
+                System.out.print(isEven);
+                isEven =  n % 2; 
+            }
+            System.out.println("");
+        }
+    }
     public static void main(String[] args) {
         Patterns pattern = new Patterns();
-        // pattern.pattern2(5);
-        // pattern.pattern3(5);
-        // pattern.pattern5(5);
+        pattern.pattern11(5);
+
     }
     
 }
