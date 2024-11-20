@@ -201,7 +201,6 @@ public class Patterns {
             System.out.println("");
         }
     }
-
     public void pattern14(int n){
         // A
         // AB
@@ -214,22 +213,188 @@ public class Patterns {
             }
             System.out.println("");
         }
-    }public static void main(String[] args) {
+    }
+    public void pattern15(int n){
+        // ABCDE
+        // ABCD
+        // ABC
+        // AB
+        // A
+        for (int i = n; i > 0; i--){
+            for (int j = 1; j <= i; j++){
+                System.out.print((char) (j + 64));
+            }
+            System.out.println("");
+        }
+    }
+    public void pattern16(int n){
+        // A
+        // BB
+        // CCC
+        // DDDD
+        // EEEEE
+        for (int i = 1; i <= n; i++){
+            for (int j = 1; j <= i; j++){
+                System.out.print((char) (i + 64));
+            }
+            System.out.println("");
+        }
+    }
+    public void pattern17(int n){
+    //      A
+    //     ABA
+    //    ABCBA
+    //   ABCDCBA
+        for (int i = 0; i < n; i++){
+            System.out.print(" ".repeat(n-i + 1));
+            for (int j = 0; j <= i; j++){
+                System.out.print((char) (j + 65));
+            }
+            // System.out.print((char) ((i+1) + 64));
+            for (int j =  i; j > 0; j--){
+                System.out.print((char) (j + 64));
+            }
+            System.out.println("");
+        }
+    }
+    public void pattern18(int n){
+        char start_char = (char)(n+64);
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j <= i; j++){
+                System.out.print((char)(start_char + j));
+            }
+            start_char --;
+            System.out.println("");
+        }
+    }
+    public void pattern19(int n){
+        // **********
+        // ****  ****
+        // ***    ***
+        // **      **
+        // *        *
+        // *        *
+        // **      **
+        // ***    ***
+        // ****  ****
+        // **********
+        for (int i = n; i > 0; i--){
+            for (int j = 1; j <= i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            // System.out.print(" ".repeat(n-i));
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        for (int i = 1; i <= n; i++){
+            for (int j = 0; j < i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            // System.out.print(" ".repeat(n-i));
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        
+    }
+    public void pattern20(int n){
+        // *      *
+        // **    **
+        // ***  ***
+        // ********
+        // ***  ***
+        // **    **
+        // *      *
+        for (int i = 1; i <= n; i++){
+            for (int j = 0; j < i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            // System.out.print(" ".repeat(n-i));
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        for (int i = n-1; i > 0; i--){
+            for (int j = 1; j <= i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            // System.out.print(" ".repeat(n-i));
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+    public void pattern21(int n){
+        // *****
+        // *   *
+        // *   *
+        // *   *
+        // *****
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                if (j == 0 || j == (n-1) || i == 0 || i == (n-1)){
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public void pattern22(int n){
+            // 4444444
+            // 4333334
+            // 4322234
+            // 4321234
+            // 4322234
+            // 4333334
+            // 4444444
+        for (int i = 0; i < 2*n-1; i++){
+            for (int j = 0; j < 2*n-1; j++){
+                int left = j - 0;
+                int right = (2*n)- 2 -j;
+                int up = i - 0;
+                int down = (2*n)- 2 -i;
+                int num = n - Math.min(Math.min(up, down),  Math.min(left, right));
+                System.out.print(num);
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
         Patterns pattern = new Patterns();
-        pattern.pattern1(5); // Uncomment to see pattern1
-        pattern.pattern2(5); // Uncomment to see pattern2
-        pattern.pattern3(5); // Uncomment to see pattern3
-        pattern.pattern4(5); // Uncomment to see pattern4
-        pattern.pattern5(5); // Uncomment to see pattern4
-        pattern.pattern6(5); // Uncomment to see pattern6
-        pattern.pattern7(5); // Uncomment to see pattern7
-        pattern.pattern8(5); // Uncomment to see pattern8
-        pattern.pattern9(5); // Uncomment to see pattern9
-        pattern.pattern10(5); // Uncomment to see pattern10
-        pattern.pattern11(5); // Uncomment to see pattern10
-        pattern.pattern12(5); // Uncomment to see pattern10
-        pattern.pattern13(5); // Uncomment to see pattern10
-        pattern.pattern14(5); // Uncomment to see pattern10
+        // pattern.pattern1(5); // Uncomment to see pattern1
+        // pattern.pattern2(5); // Uncomment to see pattern2
+        // pattern.pattern3(5); // Uncomment to see pattern3
+        // pattern.pattern4(5); // Uncomment to see pattern4
+        // pattern.pattern5(5); // Uncomment to see pattern4
+        // pattern.pattern6(5); // Uncomment to see pattern6
+        // pattern.pattern7(5); // Uncomment to see pattern7
+        // pattern.pattern8(5); // Uncomment to see pattern8
+        // pattern.pattern9(5); // Uncomment to see pattern9
+        // pattern.pattern10(5); // Uncomment to see pattern10
+        // pattern.pattern11(5); // Uncomment to see pattern10
+        // pattern.pattern12(5); // Uncomment to see pattern10
+        // pattern.pattern13(5); // Uncomment to see pattern10
+        // pattern.pattern14(5); // Uncomment to see pattern10
+        pattern.pattern22(4); // Uncomment to see pattern10
     }
 }
 
