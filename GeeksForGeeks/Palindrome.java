@@ -1,17 +1,33 @@
 package GeeksForGeeks;
 public class Palindrome {
     public boolean isPalindrome(int x){
-        int input = x;
-        int reversed = 0;
-        while (input != 0){
-            int digit = input % 10;
-            input /= 10;
-            reversed = reversed*10 + digit;
+        String reversed_input = "";
+        String input_str = Integer.toString(x);
+        for (int i = input_str.length()-1; i >= 0; i--){
+            reversed_input += input_str.charAt(i);
         }
-        if (reversed == x){
+        // System.out.println(reversed_input);
+        // System.out.println(input_str);
+        if (reversed_input.equals(input_str)){
             return true;
         }
         return false;
+    }
+    public boolean isPalindrome1(int x){
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+
+        int reversed = 0;
+        int original = x;
+
+        while (x > 0) {
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
+            x /= 10;
+        }
+
+        return original == reversed; 
     }
     public static void main(String[] args) {
         Palindrome p = new Palindrome();
