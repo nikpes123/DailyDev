@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+
 
 public class PrintNTo1{
     public void print(int n){

@@ -1,4 +1,3 @@
-package GeeksForGeeks;
 
 public class CountDigits {
     public int evenlyDivides(int n){

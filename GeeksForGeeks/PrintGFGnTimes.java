@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+
 
 public class PrintGFGnTimes {
     public void printGFG(int n){

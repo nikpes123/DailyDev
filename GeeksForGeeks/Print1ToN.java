@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+
 
 public class Print1ToN {
     int count = 1;
