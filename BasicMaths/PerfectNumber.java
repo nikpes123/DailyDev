@@ -1,7 +1,5 @@
 package BasicMaths;
 
-import java.util.ArrayList;
-
 /*
  * LeetCode Question # 507
  * Difficulty: Medium
@@ -23,34 +21,21 @@ public class PerfectNumber {
          * @param num The input number to check.
          * @return true if the number is perfect, false otherwise.
          */
-        int sum = 0;
-        ArrayList<Integer> divisors = getDivisors(num);
-        for (int i: divisors){
-            sum += i;
+        int sum = 1;
+        if (num <= 1){
+            return false;
         }
-        return sum == num;
-    }
-    /**
-     * This method calculates all divisors of a given number, excluding the number itself.
-     * 
-     * @param n The input number.
-     * @return An ArrayList containing the divisors of the number.
-     */
-    public ArrayList<Integer> getDivisors(int n){
-        ArrayList<Integer> lst = new ArrayList<>();
-        if (n <= 1){
-            return lst;
-        }
-        for(int i = 1; i <= Math.sqrt(n); i++){
-            if (n % i == 0){
-                lst.add(i);
-                if (i != 1 && n / i != i && n / i != n) { // Exclude the number itself
-                    lst.add(n / i);
+        for(int i = 2; i <= Math.sqrt(num); i++){
+            if (num % i == 0){
+                sum += i;
+                if ((num / i) != i) { // Exclude the number itself
+                    sum += (num / i);
                 }
             }
         }
-        return lst;
+        return (sum == num);
     }
+
     public static void main(String[] args) {
         PerfectNumber obj = new PerfectNumber();
         System.out.println("Input Number: " + Integer.toString(28) + " is " + obj.checkPerfectNumber(28) );
