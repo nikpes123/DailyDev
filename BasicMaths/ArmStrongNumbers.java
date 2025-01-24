@@ -1,6 +1,8 @@
 package BasicMaths;
 
-/**
+/** 
+ * LeetCode Question: 1134
+ * Difficulty: Easy
  * Problem: Armstrong Number (Narcissistic Number)
  * 
  * An Armstrong number for a given number of digits is a number such that the
