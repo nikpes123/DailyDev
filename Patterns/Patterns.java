@@ -34,7 +34,6 @@ public class Patterns {
             System.out.println("");
         }
     }
-
     public void pattern4(int x){
         // 1 
         // 2 2
@@ -45,10 +44,10 @@ public class Patterns {
             for (int j = 1; j <= i; j++){
                 System.out.print(i + " ");
             }
-            System.out.println("");
+            System.err.println();
+            // System.out.println(Integer.toString(i).repeat(i));
         }
     }
-
     public void pattern5(int x){
         // *****
         // ****
@@ -65,7 +64,7 @@ public class Patterns {
         // 1 2 3
         // 1 2
         // 1
-        for (int i = n ; i > 0 ;i--){
+        for (int i = n ; i > 0; i--){
             for (int j = 1; j <= i; j++){
                 System.out.print(j + " ");
             }
@@ -392,9 +391,10 @@ public class Patterns {
         // pattern.pattern10(5); // Uncomment to see pattern10
         // pattern.pattern11(5); // Uncomment to see pattern10
         // pattern.pattern12(5); // Uncomment to see pattern10
-        // pattern.pattern13(5); // Uncomment to see pattern10
+        pattern.pattern17(5); // Uncomment to see pattern10
+
         // pattern.pattern14(5); // Uncomment to see pattern10
-        pattern.pattern22(4); // Uncomment to see pattern10
+        // pattern.pattern22(4); // Uncomment to see pattern10
     }
 }
 

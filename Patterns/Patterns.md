@@ -250,6 +250,155 @@ Prints a triangle pattern with letters from the English alphabet. Each row start
         }
     }
 ```
+### Method: `pattern15`
+Prints an inverted triangle pattern using uppercase letters from the alphabet. Each row starts with 'A' and continues up to the letter that corresponds to the row length, decreasing one letter each line.
+
+```java
+    public void pattern15(int n){
+        for (int i = n; i > 0; i--){
+            for (int j = 1; j <= i; j++){
+                System.out.print((char) (j + 64));
+            }
+            System.out.println("");
+        }
+    }
+
+```
+### Method: `pattern16`
+Prints a right-angled triangle of repeating letters, with each row containing the same letter, which progresses from 'A' to the letter corresponding to the row number.
+```java
+    public void pattern16(int n){
+        for (int i = 1; i <= n; i++){
+            for (int j = 1; j <= i; j++){
+                System.out.print((char) (i + 64));
+            }
+            System.out.println("");
+        }
+    }
+```
+### Method: `pattern17`
+Prints a symmetric pyramid pattern using letters from the alphabet, where each row starts with 'A' and extends symmetrically to and from the middle letter of the row.
+```java
+    public void pattern17(int n){
+        for (int i = 0; i < n; i++){
+            System.out.print(" ".repeat(n-i + 1));
+            for (int j = 0; j <= i; j++){
+                System.out.print((char) (j + 65));
+            }
+            for (int j = i; j > 0; j--){
+                System.out.print((char) (j + 64));
+            }
+            System.out.println("");
+        }
+    }
+```
+### Method: `pattern18`
+Prints a right-angled triangle pattern with letters, starting with the letter that corresponds to the number of rows and progressing alphabetically downward each row.
+```java
+    public void pattern18(int n){
+        char start_char = (char)(n+64);
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j <= i; j++){
+                System.out.print((char)(start_char + j));
+            }
+            start_char--;
+            System.out.println("");
+        }
+    }
+```
+### Method: `pattern19`
+Prints a diamond pattern using asterisks, creating an hourglass shape that is mirrored vertically.
+```java
+    public void pattern19(int n){
+        for (int i = n; i > 0; i--){
+            for (int j = 1; j <= i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        for (int i = 1; i <= n; i++){
+            for (int j = 0; j < i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+```
+### Method: `pattern20`
+Prints an hourglass pattern using asterisks, where each row's asterisks are separated by spaces that increase as you move toward the center.
+```java
+    public void pattern20(int n){
+        for (int i = 1; i <= n; i++){
+            for (int j = 0; j < i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            // System.out.print(" ".repeat(n-i));
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        for (int i = n-1; i > 0; i--){
+            for (int j = 1; j <= i; j++){
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2*(n-i); j++){
+                System.out.print(" ");
+            }
+            // System.out.print(" ".repeat(n-i));
+            for (int j = i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+```
+### Method: `pattern21`
+Prints a square frame of asterisks with an empty center, except for the borders which are filled.
+
+```java
+    public void pattern21(int n){
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                if (j == 0 || j == (n-1) || i == 0 || i == (n-1)){
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+```
+### Method: `pattern22`
+Prints a numeric pattern in a square formation, where the number decreases as you move inward from the borders.
+```java
+    public void pattern22(int n){
+        for (int i = 0; i < 2*n-1; i++){
+            for (int j = 0; j < 2*n-1; j++){
+                int minDistance = Math.min(Math.min(i, 2*n-2-i), Math.min(j, 2*n-2-j));
+                System.out.print(n - minDistance);
+            }
+            System.out.println();
+        }
+    }
+```
 ## `Example Usage`
 The main method demonstrates how to use the Patterns class to print each pattern. Uncomment each method call to display different patterns.
 
@@ -266,11 +415,18 @@ public static void main(String[] args) {
     pattern.pattern8(5); // Uncomment to see pattern8
     pattern.pattern9(5); // Uncomment to see pattern9
     pattern.pattern10(5); // Uncomment to see pattern10
-    pattern.pattern11(5); // Uncomment to see pattern10
-    pattern.pattern12(5); // Uncomment to see pattern10
-    pattern.pattern13(5); // Uncomment to see pattern10
-    pattern.pattern14(5); // Uncomment to see pattern10
-
+    pattern.pattern11(5); // Uncomment to see pattern11
+    pattern.pattern12(5); // Uncomment to see pattern12
+    pattern.pattern13(5); // Uncomment to see pattern13
+    pattern.pattern14(5); // Uncomment to see pattern14
+    pattern.pattern15(5); // Uncomment to see pattern15
+    pattern.pattern16(5); // Uncomment to see pattern16
+    pattern.pattern17(5); // Uncomment to see pattern17
+    pattern.pattern18(5); // Uncomment to see pattern18
+    pattern.pattern19(5); // Uncomment to see pattern19
+    pattern.pattern20(5); // Uncomment to see pattern20
+    pattern.pattern21(5); // Uncomment to see pattern21
+    pattern.pattern22(5); // Uncomment to see pattern22
 }
 ```
 
@@ -316,3 +472,27 @@ public static void main(String[] args) {
 
 ## Pattern 14 Example Output
 ![Pattern 14](images/img14.png)
+
+## Pattern 15 Example Output
+![Pattern 15](images/img15.png)
+
+## Pattern 16 Example Output
+![Pattern 16](images/img16.png)
+
+## Pattern 17 Example Output
+![Pattern 17](images/img17.png)
+
+## Pattern 18 Example Output
+![Pattern 18](images/img18.png)
+
+## Pattern 19 Example Output
+![Pattern 19](images/img19.png)
+
+## Pattern 20 Example Output
+![Pattern 20](images/img20.png)
+
+## Pattern 21 Example Output
+![Pattern 21](images/img21.png)
+
+## Pattern 22 Example Output
+![Pattern 22](images/img22.png)
