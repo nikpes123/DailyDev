@@ -1,4 +1,4 @@
-package BasicMaths;
+package BasicMaths.Questions;
 
 /*
  * LeetCode Question # 507

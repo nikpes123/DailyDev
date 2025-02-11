@@ -1,4 +1,4 @@
-package BasicMaths;
+package BasicMaths.Questions;
 
 public class CheckPrime {
     /**
